@@ -1,0 +1,28 @@
+class Solution{
+  public:
+    string removeConsecutiveCharacter(string S)
+    {
+        stack <char> st;
+        string result="";
+        if (S.size()==0)
+          return result;
+        st.push(S[0]);
+        
+        for(int i=1;i<S.size();i++)
+        {
+            if(st.top()==S[i])
+              continue;
+            st.push(S[i]);
+        }
+        
+        while(!st.empty())
+        {    
+            char c = st.top();
+            result=result+c;
+            st.pop();
+        }
+        
+         reverse(result.begin(),result.end());
+        return result;
+    }
+};
