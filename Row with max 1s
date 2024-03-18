@@ -1,0 +1,23 @@
+//User function template for C++
+class Solution{
+public:
+int rowWithMax1s(vector<vector<int> > arr, int n, int m) {
+    // code here
+    int j = 0;
+    
+        while(j<m){
+            int i =0;
+            while(i < n){
+                if(arr[i][j] == 1){
+                    return i;
+                }else{
+                    i++;
+                }
+            }
+            j++;
+        }
+        
+        return -1;
+}
+ 
+};
