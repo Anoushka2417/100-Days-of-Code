@@ -1,0 +1,23 @@
+class Solution
+{
+    public:
+        int findNum(int n)
+        {
+        //complete the function here
+            int prod=n*5,ans;
+            while(prod>=5){
+                int t=prod,sum=0;
+                while(t>=5){
+                    sum+=t/5;
+                    t/=5;
+                }
+                if(sum>=n){
+                    ans=prod;
+                    prod-=5;
+                }
+                else if(sum<n){
+                    return ans;
+                }
+            }
+        }
+};
