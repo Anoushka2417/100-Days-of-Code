@@ -1,0 +1,22 @@
+int CountPS(char s[], int n)
+{   
+    int ans = 0;
+    for(int i=0; i<n; i++){
+         // for even string
+           int left = i, right = i+1;
+           while(left >=0 && right < n && s[left] == s[right]){
+                ans++;
+                left--;
+                right++;
+           }
+          // for odd string
+           left = i-1, right = i+1;
+           while(left >=0 && right < n && s[left] == s[right]){
+                ans++;
+                left--;
+                right++;
+           }
+    }
+    
+    return ans;
+}
